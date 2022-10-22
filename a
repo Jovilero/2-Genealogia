@@ -1,0 +1,320 @@
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-64254025-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+    <!--
+    body,
+    td,
+    th {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 13px;
+    }
+
+    .Estilo1 {
+        font-family: Amaze;
+        font-weight: bold;
+        font-size: 24px;
+        color: #D96C00;
+    }
+
+    .peque {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10px;
+    }
+    -->
+</style>
+<script language="Javascript">
+    function disableselect(e) {
+        return false
+    }
+    function reEnable() {
+        return true
+    }
+    document.onselectstart = new Function("return false")
+    if (window.sidebar) {
+        document.onmousedown = disableselect
+        document.onclick = reEnable
+    }
+</script>
+<script type="text/javascript" language="Javascript">
+< !--Begin
+    document.oncontextmenu = function () { return false }
+// End -->
+</script>
+<script language="JavaScript">function tecla() { alert('EL TECLADO BLOQUEADO') }; document.onkeydown = tecla;</script>
+<script type="text/javascript" language="Javascript">
+< !--Begin
+    document.oncontextmenu = function () { return false }
+// End -->
+</script>
+<script language="JavaScript">function tecla() { alert('EL TECLADO BLOQUEADO') }; document.onkeydown = tecla;</script>
+
+<table width="90%">
+    <tr>
+        <th rowspan="4" width="10%" scope="col">
+            <div align="center"><img src="Escut.jpeg" width="90" height="107" /></div>
+        </th>
+        <td width="74%" scope="col">
+            <div align="left"><span class="Estilo1">Servicio Diocesano de Archivos Parroquiales</span></div>
+        </td>
+        <!--th width="10%" scope="col"><a href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F795170283879306%2F" target="_blank"><img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAsCAIAAAAci4oCAAAAA3NCSVQICAjb4U/gAAAa90lEQVRoQ92aaZAd1XXHe3/bvJk3+2i0I41AEmIXQmY3GCxwwPgDxGBE2cSpIpjgOAWkSMp2Kl6CF0hMbLniVIzLWyAYyyACNhFGLBZEYCFAAiFpJDSrNKOZeUu/fr3nd7pHIwGC8kfjlvTUfd9dzv3fs/zP6afGXIqixgp/VFVV5IoUReO/RqNRqVSSe1r+oIt5Ik3RIiVSNS2O4nQ+RUkWUQ7Pf4ypwjDUNFmUTzrTMx1yjK5HNc30TMf+IUPef8JjfqvreltbGyIdlkkAS7YEXnGoqnq9Xq9Wq6VSKZPJvG2KpOdh+GR76ZU0C8rT36f3yVTvlmBmk+8D37tHTS+UQHlk3fd9fK9J3mv4MftPTU35vt/e3j4N1vSZHJYiDOOxsZGent4jk759GlHDBLOjr1gJ1ViP4wCARMVUVUsP4JgiJOomx6WqqPDjjz8+Ojp6/fXXFwqFtHsURamW8ZjKlbbwyE06MBU7/ZxpSR/foWs0cqEjM53TVdLH9xBwupmZa7UaQmpifuH02mocKiHaETn1SlO+yFdREPJ1HAXcybfJDX8xMSXyZhrlqzhmLlVlhwazizEeC6l0S+nm2c/+/fsPHDiAHAMDA6tXrwYp27b37t2L+QdBgIie59GZR27of/DgQYZww7flcnlkZISv0jlBcM+ePVgD33Ix4dDQ0MxytHBPB+bkBrtBX5jqaKBnOr/jhj4IhqMwAlXR9PitgdE3RyqTUxXPjUxLdxu+Yem6punojwYEyelG/CfOS1PUSIl5YpYoxO7ogVIpaqgYhVxfu7580SwrUwBPAUx6HTGcVLhUR9avX79r1y5QOO200+bOncu22f/Xvva1efPmbdq06fOf//xLL7100kknnX/++d/85jfXrl0LrE888QTasXLlyhUrVtxyyy0XXXQRyH76058+8cQTv/rVr7a0tADQrbfeun37dsYi6qJFi66++mqW47rnnnsMwxgbG7v99tsfeOCBLVu2LFu2DOzuvPNO5ky1dUbFwGsGx1R+4DYMRfnf53du3OWomaJhtAdKrPmmoUWqp6ZbolMyhXhoLuxLV9UginDFAMYJMy/ARagbnRxz66CzcM/ua85bUCo1+zEHIQPThdMZ0kdGvf766wy/8cYbe3t777777mKx+OCDD7JtjBFcUDFwpAP9uUERHn300euuuw43+pWvfCWXy4Hv5z73OYY888wzoMzJA9PDDz/80EMPITPDQbOpqYl2sHj++eeZ81vf+ta6devuv/9+13UB+pprrrnjjju2bdvGac2caHozI3D6mGKnbdne/6tXXbPY5YWaU/frblx33KrtVmp123HtmlueciannENT9mTVPlSuHqrZB6ZqkxV3ouxM2o7t+NW6U284DTfk3ndripnfMZX53mM7giDSCYhHXaA/IwT3t9122/Lly++66y52glLQMj4+ji6AzuzZs9Oe6AKPpmkCB9a6ceNGIDv33HNpJELx2dzcTB/83cKFC3ns6+vDuG6++eYzzjjj61//+nPPPQdStKNQmN59990H7pwHk7e2tgIBw0GTDjMXjUc/cj8js/arF4Zyza2NWlWNDdWITcXXdRW3o4sd6oquaKZimArKpquGqWUNXeefqcdJo2IZStY0+JIP09QjRfe9Wj6f3zpsbHm1nxNOLGAasnTh9JGv0AL81KpVqx555BHCDdfSpUt//etfo0QvvPACq+MpXnvtNRAcHh4GRLa3YMGCyy67jMDEEhMTE0zoOA6mxP4ZgsMiUDDJk08+ibJccMEFLJHu/Pjjj2fPa9aswX47OzvRLFSPrxibKm96pqmERx8wLTMmqfeedV2prVXct+qH+CJIEh5d4IxAHDcuG41CvI5QMSVQQ54Zrvlh1PAVtxH6Yeh6kethwREgB6GHNoyXnYx3cNXyRQRW+EhKs/hkrvSgwAJ3s2HDBg587aeuj8Kopa3l4osuHhwc3rr15ZHR/Uv6Trjyyiv/78Utz2/efNGFF5+5auXc+XOee/a5l7b+vqe7Z/78+V7gn3LyKbZTxzGeffY5nMEjj25obm5du/b6oaGBX/3ykWqteu21f97Z2YU2dXd3o56PPvrYyMjwaaecziF298xCfzmJvr5FbW3tYUzUSjx04jYS/UJUgRqBOVqJDFf84/rlx5/oeI6pmZiNGhLtCPmRMK5Yhk/zJmIdrkmctuLHYeAZph72lMxCxhDHh5839AknHjpk60actTJvvHVwdWnijs9ebrueGXMSSTSIFEOHXMhCftjIWoUgjDVOgfWC0LKsTb996tDkBKrx3XXf++yNf3HyySvAGm9omplG3U10XfW8yLIM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"></a></th></td-->
+        <th width="16%" scope="col"><INPUT TYPE='Button' VALUE='<<<  Anterior' ONCLICK='history.back()'></th>
+    </tr>
+</table>
+
+<table width="100%" border="0" align="center">
+    <tr>
+
+    </tr>
+    <tr>
+        <td valign="top">
+            <table align=center width=75%<tr>
+                <div color="ffff00">
+                    </font>
+    </tr>
+    <tr>
+        <table width='100%' border='1' cellspacing='0' cellpadding='1' align='center' style='background:#fbeee6'>
+            <tr>
+                <td width='10%' bgcolor='#fbeee6'><strong>Sacramento</td>
+                <td width='15%' bgcolor='#fbeee6'><strong>Registro</td>
+                <td width='15%' bgcolor='#fbeee6'><strong>Libro</td>
+                <td width='20%' bgcolor='#fbeee6'><strong>Folio</td>
+                <td width='20%' bgcolor='#fbeee6'><strong>Asiento</td>
+                <td width='10%' bgcolor='#fbeee6'><strong>Sexo</td>
+                <td width='10%' bgcolor='#fbeee6'><strong>Subcon</strong></td>
+            </tr>
+            <tr>
+                <td width='10%'>4</td>
+                <td width='15%'>1351430</td>
+                <td width='15%'>LM 1568-1620</td>
+                <td width='20%'>095v</td>
+                <td width='20%'>0937</td>
+                <td width='10%'>M</td>
+                <td width='10%'>0</td>
+        </table>
+        <table width='100%' border='1' cellspacing='0' cellpadding='1' align='center' style='background:#fbeee6'>
+            <tr>
+                <td width='100%'> El campo Sacramento indica: 1=Bautismo, 2=Confirmaci&oacute;n, 4=Matrimonio,
+                    5=Defunci&oacute;n y 6=Matrícula Parroquial</td>
+        </table>
+        <table width='100%' border='1' cellspacing='0' cellpadding='1' align='center' style='background:#fbeee6'>
+            <tr>
+                <td width='20%' bgcolor='#fbeee6'></td>
+                <td width='20%' bgcolor='#fbeee6'><strong>Nombre</td>
+                <td width='20%' bgcolor='#fbeee6'><strong>Apellido 1</td>
+                <td width='20%' bgcolor='#fbeee6'><strong>Apellido 2</td>
+                <td width='20%' bgcolor='#fbeee6'><strong>Lugar Nacimiento</td>
+            </tr>
+            <tr>
+                <td width='20%' bgcolor='#fbeee6'><strong>Interesado</strong></td>
+                <td width='20%'>Esperanza</td>
+                <td width='20%'>Forriol</td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+            </tr>
+            <tr>
+                <td width='20%' bgcolor='#fbeee6'><strong> C&oacute;nyuge </strong></td>
+                <td width='20%'>Miguel</td>
+                <td width='20%'>Insa</td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+            </tr>
+            <tr>
+                <td width='20%' bgcolor='#fbeee6'><strong> Padre</strong< /td>
+                <td width='20%'></td>
+                <td width='20%'>Forriol</td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+            </tr>
+            <tr>
+                <td width='20%' bgcolor='#fbeee6'><strong> Madre</strong></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+            </tr>
+            <tr>
+                <td width='20%' bgcolor='#fbeee6'><strong>Abuelo Paterno</strong></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+            </tr>
+            <tr>
+                <td width='20%' bgcolor='#fbeee6'><strong> Abuela paterna </strong></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+            </tr>
+            <tr>
+                <td width='20%' bgcolor='#fbeee6'><strong>Abuelo Materno</strong></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+            </tr>
+            <tr>
+                <td width='20%' bgcolor='#fbeee6'><strong> Abuela Materna </strong></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+                <td width='20%'></td>
+        </table>
+        <table width='100%' border='1' cellspacing='0' cellpadding='1' align='center' style='background:#fbeee6'>
+            <tr>
+                <td width='12%' bgcolor='#fbeee6'><strong>Fecha Nacimiento</td>
+                <td width='12%' bgcolor='#fbeee6'><strong> Fecha Sacramento </td>
+                <td width='20%' bgcolor='#fbeee6'><strong>Lugar Sacramento</td>
+                <td width='20%' bgcolor='#fbeee6'><strong> Oficiante</td>
+                <td width='18%' bgcolor='#fbeee6'><strong> Profesi&oacute;n</strong></td>
+                <td width='18%' bgcolor='#fbeee6'><strong> Profesi&oacute;n del padre</strong></td>
+            </tr>
+            <tr>
+                <td width='12%'>nn - nn - nnnn</td>
+                <td width='12%'>30 - 09 - 1580</td>
+                <td width='20%'>Valencia: San Esteban Protomártir</td>
+                <td width='20%'></td>
+                <td width='18%'></td>
+                <td width='18%'></td>
+        </table>
+        <table width='100%' border='1' cellspacing='0' cellpadding='1' align='center' style='background:#fbeee6'>
+            <tr>
+                <td width='50%' bgcolor='#fbeee6'> <strong>Domicilio: </strong></td>
+                <td width='50%' bgcolor='#fbeee6'> <strong>Inscrito en: </strong></td>
+            <tr>
+                <td width='50%'></td>
+                <td width='50%'>Valencia: San Esteban Protomártir</td>
+            </tr>
+        </table>
+        <table width='100%' border='1' cellspacing='0' cellpadding='1' align='center' style='background:#fbeee6'>
+            <tr>
+                <td width='100%' bgcolor='#fbeee6'> <strong>Notas </strong></td>
+            </tr>
+            <tr>
+                <td width='100%'> ...Folio en mal estado</td>
+            </tr>
+        </table><br />
+    <tr>Cumplen las condiciones de b&uacute;squeda: 57 registros. Mostrando la p&aacute;gina 1 de 57. Ordenados por
+        A&ntilde;o Evento.<br />
+        <table width='100%' border='1' cellspacing='0' cellpadding='1' align='center' style='background:#fbeee6'>
+            <tr>
+                <form action='pedir.php' method='GET'> <INPUT type='hidden' NAME='registre' value='1351430'>
+                    <td valign='middle'>
+                    <th><input type='submit' value='PEDIR ESTE REGISTRO'></th>
+                </form>
+                <form action='filtrador.php' method='post'>
+                    <td valign='middle'>
+                    <th><input type='submit' value=' VOLVER A B&Uacute;SQUEDAS'></th>
+                </form>
+                <form action='http://www.arxparrvalencia.org/castellano.html' method='post'>
+                    <td valign='middle'>
+                    <th><input type='submit' value=' VOLVER A INICIO'></th>
+                    </td>
+                </form>
+                <td valign='middle'>
+                <th><input type='button' name='imprimir' value='IMPRIMIR LA P&Aacute;GINA' onclick='window.print();'>
+                </th>
+            </tr>
+            </form>
+        </table><br /><br />
+</table>
+<center><b>1</b> <a
+        href='listados.php?pagina=2&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>2</a>
+    <a
+        href='listados.php?pagina=3&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>3</a>
+    <a
+        href='listados.php?pagina=4&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>4</a>
+    <a
+        href='listados.php?pagina=5&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>5</a>
+    <a
+        href='listados.php?pagina=6&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>6</a>
+    <a
+        href='listados.php?pagina=7&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>7</a>
+    <a
+        href='listados.php?pagina=8&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>8</a>
+    <a
+        href='listados.php?pagina=9&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>9</a>
+    <a
+        href='listados.php?pagina=10&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>10</a>
+    <a
+        href='listados.php?pagina=11&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>11</a>
+    <a
+        href='listados.php?pagina=12&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>12</a>
+    <a
+        href='listados.php?pagina=13&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>13</a>
+    <a
+        href='listados.php?pagina=14&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>14</a>
+    <a
+        href='listados.php?pagina=15&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>15</a>
+    <a
+        href='listados.php?pagina=16&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>16</a>
+    <a
+        href='listados.php?pagina=17&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>17</a>
+    <a
+        href='listados.php?pagina=18&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>18</a>
+    <a
+        href='listados.php?pagina=19&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>19</a>
+    <a
+        href='listados.php?pagina=20&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>20</a>
+    <a
+        href='listados.php?pagina=21&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>21</a>
+    <a
+        href='listados.php?pagina=22&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>22</a>
+    <a
+        href='listados.php?pagina=23&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>23</a>
+    <a
+        href='listados.php?pagina=24&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>24</a>
+    <a
+        href='listados.php?pagina=25&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>25</a>
+    <a
+        href='listados.php?pagina=26&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>26</a>
+    <a
+        href='listados.php?pagina=27&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>27</a>
+    <a
+        href='listados.php?pagina=28&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>28</a>
+    <a
+        href='listados.php?pagina=29&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>29</a>
+    <a
+        href='listados.php?pagina=30&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>30</a>
+    <a
+        href='listados.php?pagina=31&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>31</a>
+    <a
+        href='listados.php?pagina=32&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>32</a>
+    <a
+        href='listados.php?pagina=33&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>33</a>
+    <a
+        href='listados.php?pagina=34&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>34</a>
+    <a
+        href='listados.php?pagina=35&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>35</a>
+    <a
+        href='listados.php?pagina=36&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>36</a>
+    <a
+        href='listados.php?pagina=37&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>37</a>
+    <a
+        href='listados.php?pagina=38&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>38</a>
+    <a
+        href='listados.php?pagina=39&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>39</a>
+    <a
+        href='listados.php?pagina=40&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&lins=&cognomcj=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&finevento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>57</a>
+    <a
+        href='listados.php?pagina=2&sexo=&nompa=&nomma=&nomcon=&a1=FORRIOL&a1ap=&cognomcj=&lins=&a1am=&a2=&nom=&a2p=&a2m=&lnac=&lpa=&lma=&principio_evento=&final_evento=nnnn&principio=&final=nnnn&orden=evento&tipus=&labuopat=&levent=&labuapat=&labuomat=&labuamat=&lconyuge=&filtre=P&ltots=&cognomq=&observa=&profeq='>Siguiente
+        ></a></center>
+</td>
+</tr>
+</table>
+<table width="90%" border="0" align="center">
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+</table>

@@ -1,0 +1,10 @@
+,0,1,2,3,4
+0,,Nombre,Apellido 1,Apellido 2,Lugar Nacimiento
+1,Interesado,Francisco,Forriol,García,Buñol
+2,Cónyuge,María Teresa,Grancha,Bolumar,Buñol
+3,Padre,Francisco,Forriol,,
+4,Madre,Francisca,García,,
+5,Abuelo Paterno,,Forriol,,
+6,Abuela paterna,,,,
+7,Abuelo Materno,,García,,
+8,Abuela Materna,,,,
