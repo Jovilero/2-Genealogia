@@ -53,6 +53,17 @@ def researcher(
         pass
     
     
-def research_with_pd(url):
-    
-    return pd.read_html(url)
+def getNpages(html):
+    pa=pd.read_html(html)
+
+    for eachlist in pa[1].head().to_string().splitlines():
+        # print(eachlist.split())
+        splitted_header=eachlist.split()
+        # print(type(splitted_header))
+        try:
+            position=splitted_header.index('búsqueda:')
+            nPages=splitted_header[position+1]
+        except:
+            pass
+    print(nPages)
+    return nPages

@@ -5,20 +5,8 @@ import time
 apellido="FORRIOL"
 
 url,html=funciones.researcher(Pa1=apellido)
-pa=pd.read_html(html)
+nPages=funciones.getNpages
 
-
-for eachlist in pa[1].head().to_string().splitlines():
-    # print(eachlist.split())
-    splitted_header=eachlist.split()
-    # print(type(splitted_header))
-    try:
-        position=splitted_header.index('búsqueda:')
-        position2=splitted_header.index('registros.')
-        nPages=splitted_header[position+1]
-    except:
-        pass
-print(nPages)
 
 for i in range(int(nPages)+1):
     print(i)
