@@ -5,7 +5,7 @@ import time
 apellido="FORRIOL"
 
 url,html=funciones.researcher(Pa1=apellido)
-nPages=funciones.getNpages
+nPages=funciones.getNpages(html)
 
 
 for i in range(int(nPages)+1):
@@ -20,9 +20,6 @@ for i in range(int(nPages)+1):
 
 #meterlo en sql o otro lugar q se vea bien rapido
 #¿pasar a gedcom?
-
-
-
 
 print('ok')
 
