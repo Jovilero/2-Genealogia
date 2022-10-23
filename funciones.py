@@ -65,5 +65,5 @@ def getNpages(html):
             nPages=splitted_header[position+1]
         except:
             pass
-    print(nPages)
-    return nPages
+    print(int(nPages.replace('.','').strip()))
+    return int(nPages.replace('.',""))

@@ -1,0 +1,24 @@
+,0,1,2,3,4,5,6
+0,Sacramento,Registro,Libro,Folio,Asiento,Sexo,Subcon
+1,1,1570266,QL 1551-1565,009v,sn10,H,0
+,0
+0,"El campo Sacramento indica: 1=Bautismo, 2=Confirmación, 4=Matrimonio, 5=Defunción y 6=Matrícula Parroquial"
+,0,1,2,3,4
+0,,Nombre,Apellido 1,Apellido 2,Lugar Nacimiento
+1,Interesado,Alonso,Rochina,Vanacloche,Chelva
+2,Cónyuge,,,,
+3,Padre,Juan,Rochina,,
+4,Madre,Francisca,Vanacloche,,
+5,Abuelo Paterno,Francisco,Rochina,,
+6,Abuela paterna,,,,
+7,Abuelo Materno,,Vanacloche,,
+8,Abuela Materna,,,,
+,0,1,2,3,4,5
+0,Fecha Nacimiento,Fecha Sacramento,Lugar Sacramento,Oficiante,Profesión,Profesión del padre
+1,nn - 03 - 1555,17 - 03 - 1555,Chelva: Nuestra Señora de los Ángeles,"Moya, Cristóbal de - Vicario",,
+,0,1
+0,Domicilio:,Inscrito en:
+1,,Chelva: Nuestra Señora de los Ángeles
+,0
+0,Notas
+1,...
