@@ -92,11 +92,83 @@ def create_rute_to_save(apellido1,apellido2='',path=fr'D:\OneDrive - UPV\3-Ocio\
         return ruta
 
 def registro_to_csv(pa, ruta,i):
+    # try:
+    # print(pa[0])
+    # print(pa[1])
+    # print(pa[2])
+    # print(pa[3])
+    # print(pa[4])
+    # print(pa[5])
+    # pa[4].to_csv(fr'D:\OneDrive - UPV\3-Ocio\4-Programacion\2-Genealogia\dataframe{i}.csv')
     anyo=pa[5].loc[1,1][-4:]
-    # print(anyo)
+    print(anyo)
+    
     pa[2].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='w', index=False, header=False)
     # pa[3].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
     pa[4].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
     pa[5].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
     pa[6].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
     pa[7].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
+    # except:
+    #     pass
+    # except: pass 
+
+
+def getRegisterfrom_toCSV(
+    Pnom='',
+    Pa1='',
+    Pa2='',
+    Pa2p='',
+    Pa2m='',
+    Pa1ap='',
+    Pa1am='',
+    Plnac='',
+    Plins='',
+    Plpa='',
+    Plma='',
+    Plabuopat='',
+    Plabuapat='',
+    Plabuomat='',
+    Plabuamat='',
+    Plconyuge='',
+    Pltots='',
+    Plevent='',
+    Pcognomcj='',
+    Pcognomq='',
+    Pprofeq='',
+    Pnompa='',
+    Pnomma='',
+    Pnomcon='',
+    Ppagina='1',
+    Pprincipio='',
+    Pfinal='nnnn',
+    Psexo='',
+    Pprincipio_evento='',
+    Pfinal_evento='nnnn',
+    Pobserva='',
+    Pfiltre='P',
+    Porden='evento',
+    PSubmit='BUSCAR'
+):
+
+    url,html=researcher(Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, Ppagina, Pprincipio, Pfinal, Psexo, Pprincipio_evento, Pfinal_evento, Pobserva, Pfiltre, Porden, PSubmit, 
+)
+    nPages=getNpages(html)
+    # print(nPages)
+
+    for i in range(int(nPages)+1):
+        
+        # time.sleep(1)
+        try:
+            
+            url,html=researcher(Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, Ppagina==i, Pprincipio, Pfinal, Psexo, Pprincipio_evento, Pfinal_evento, Pobserva, Pfiltre, Porden, PSubmit)
+            
+            
+            pa=pd.read_html(html)
+            # print(pa)
+            ruta=create_rute_to_save(apellido1=Pa1,apellido2=Pa2)
+            print(i)
+            
+        except: pass
+        registro_to_csv(pa,ruta,i)
+        print(i)
