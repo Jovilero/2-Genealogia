@@ -67,31 +67,28 @@ def getNpages(html):
         try:
             position=splitted_header.index('búsqueda:')
             nPages=splitted_header[position+1]
-            print(int(nPages.replace('.','').strip()))
-            return int(nPages.replace('.',""))
         except:
             pass
+    print(int(nPages.replace('.','').strip()))
+    return int(nPages.replace('.',""))
 
 
-#no funciona bien, se deja el primer fichero por incluir
 def create_rute_to_save(apellido1,apellido2='',path=fr'D:\OneDrive - UPV\3-Ocio\4-Programacion\2-Genealogia'):
     try:
+
         os.mkdir(fr'{path}\{apellido1}')
+        #si no existe la ruta y la ha creado antes, la asigna ahora
         ruta=fr'{path}\{apellido1}'
+        try:
+            #si hay segundo apellido, crea la ruta para el segundo apellido
+            os.mkdir(fr'{path}\{apellido1}\{apellido2}')
+            #y asigna la ruta con la subcarpeta del segundo apellido
+            ruta=fr'{path}\{apellido1}\{apellido2}'
+            print(ruta)
+        except: pass
         return ruta
-    except: 
-        ruta=fr'{path}\{apellido1}'
-        
-    try:
-        os.mkdir(fr'{path}\{apellido1}\{apellido2}')
-        ruta=fr'{path}\{apellido1}\{apellido2}'
-        return ruta
-
     except:
-        ruta=fr'{path}\{apellido1}\{apellido2}'
-    return ruta
-    # return ruta
-
+        return ruta
 
 def registro_to_csv(pa, ruta,i):
     anyo=pa[5].loc[1,1][-4:]

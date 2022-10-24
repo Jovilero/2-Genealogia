@@ -75,9 +75,7 @@ def getNpages(html):
 
 def create_rute_to_save(apellido1,apellido2='',path=fr'D:\OneDrive - UPV\3-Ocio\4-Programacion\2-Genealogia'):
     try:
-        ruta=fr'{path}\{apellido1}'
-        #intenta asignar la ruta
-        #habiendo asignado o no la ruta, intenta crear la ruta, si existe, falla
+
         os.mkdir(fr'{path}\{apellido1}')
         #si no existe la ruta y la ha creado antes, la asigna ahora
         ruta=fr'{path}\{apellido1}'

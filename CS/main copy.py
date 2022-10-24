@@ -10,7 +10,7 @@ apellido2=""
 url,html=funciones.researcher(Pa1=apellido1, Pa2=apellido2)
 nPages=funciones.getNpages(html)
 
-
+#este es mas elegante, pero no guarda el primer csv que se genera
 for i in range(int(nPages)+1):
     print(i)
     # time.sleep(1)
@@ -19,12 +19,12 @@ for i in range(int(nPages)+1):
         print(i)
         pa=pd.read_html(html)
         print(i)
-        ruta=funciones2.create_rute_to_save(apellido1,apellido2)
-        print(i)
-        funciones.registro_to_csv(pa,ruta,i)
-        print("csv creado")
-    except: pass
 
+    except: pass
+    ruta=funciones2.create_rute_to_save(apellido1,apellido2)
+    print(i)
+    funciones.registro_to_csv(pa,ruta,i)
+    print("csv creado")
 
 
     # if (i==1):
