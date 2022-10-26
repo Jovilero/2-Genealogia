@@ -1,8 +1,14 @@
+# Wednesday, October 26, 2022 @ 03:19:57 PM
+#author: jjvl
+
+
+
 # from timeit import repeat
 import requests
 import pandas as pd
 import time
 import os
+
 
 
 
@@ -54,6 +60,7 @@ def researcher(
         # print(page.text)
         return URL+end_url, page.text
     except:
+        
         pass
     
     
@@ -67,9 +74,11 @@ def getNpages(html):
         try:
             position=splitted_header.index('búsqueda:')
             nPages=splitted_header[position+1]
-            print(int(nPages.replace('.','').strip()))
+            print(f"Descargando: {int(nPages.replace('.','').strip())} páginas.")
+            # print(nPages)
             return int(nPages.replace('.',""))
         except:
+            # print("No hay elementos que coincidan con los parametros de busqueda.")
             pass
 
 
@@ -94,8 +103,11 @@ def create_rute_to_save(apellido1,apellido2='',path=fr'D:\OneDrive - UPV\3-Ocio\
 
 
 def registro_to_csv(pa, ruta,i):
-    anyo=pa[5].loc[1,1][-4:]
-    # print(anyo)
+    try:
+        anyo=pa[5].loc[1,1][-4:]
+        print(pa[5].loc[1,1])
+    except: anyo="_"
+    
     pa[2].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='w', index=False, header=False)
     # pa[3].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
     pa[4].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
