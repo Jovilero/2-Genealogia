@@ -78,35 +78,35 @@ def getNpages(html):
             # print(nPages)
             return int(nPages.replace('.',""))
         except:
-            # print("No hay elementos que coincidan con los parametros de busqueda.")
+            print("No ha sido posible obtener el número de páginas.")
             pass
 
 
-#no funciona bien, se deja el primer fichero por incluir
-def create_rute_to_save(apellido1,apellido2='',path=fr'D:\OneDrive - UPV\3-Ocio\4-Programacion\2-Genealogia'):
+
+def create_rute_to_save(param1,param2='',path=fr'.\Ejemplos'):
     try:
-        os.mkdir(fr'{path}\{apellido1}')
-        ruta=fr'{path}\{apellido1}'
+        os.mkdir(fr'{path}\{param1}')
+        ruta=fr'{path}\{param1}'
         return ruta
     except: 
-        ruta=fr'{path}\{apellido1}'
+        ruta=fr'{path}\{param1}'
         
     try:
-        os.mkdir(fr'{path}\{apellido1}\{apellido2}')
-        ruta=fr'{path}\{apellido1}\{apellido2}'
+        os.mkdir(fr'{path}\{param1}\{param2}')
+        ruta=fr'{path}\{param1}\{param2}'
         return ruta
 
     except:
-        ruta=fr'{path}\{apellido1}\{apellido2}'
+        ruta=fr'{path}\{param1}\{param2}'
     return ruta
-    # return ruta
+
 
 
 def registro_to_csv(pa, ruta,i):
     try:
         anyo=pa[5].loc[1,1][-4:]
         print(pa[5].loc[1,1])
-    except: anyo="_"
+    except: anyo="x"
     
     pa[2].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='w', index=False, header=False)
     # pa[3].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
@@ -114,3 +114,5 @@ def registro_to_csv(pa, ruta,i):
     pa[5].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
     pa[6].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
     pa[7].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
+
+

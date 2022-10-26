@@ -1,4 +1,5 @@
 # Wednesday, October 26, 2022 @ 03:20:25 PM
+#ctrl+shift+t
 #JJVL
 
 import funciones
