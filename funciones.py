@@ -84,6 +84,8 @@ def getNpages(html):
 
 
 def create_rute_to_save(param1,param2='',path=fr'.\Ejemplos'):
+    if os.path.isdir==False:
+        os.mkdir(path)
     try:
         os.mkdir(fr'{path}\{param1}')
         ruta=fr'{path}\{param1}'
@@ -105,9 +107,9 @@ def create_rute_to_save(param1,param2='',path=fr'.\Ejemplos'):
 def registro_to_csv(pa, ruta,i):
     try:
         anyo=pa[5].loc[1,1][-4:]
-        print(pa[5].loc[1,1])
+        # print(pa[5].loc[1,1])
     except: anyo="x"
-    
+
     pa[2].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='w', index=False, header=False)
     # pa[3].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
     pa[4].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
@@ -116,3 +118,68 @@ def registro_to_csv(pa, ruta,i):
     pa[7].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
 
 
+
+def search_getPages_ToCSV(  
+    nombreCarpeta, nombreSubCarpeta='',
+    Pnom='',
+    Pa1='', 
+    Pa2='',
+    Pa2p='',
+    Pa2m='',
+    Pa1ap='',
+    Pa1am='',
+    Plnac='',
+    Plins='',
+    Plpa='',
+    Plma='',
+    Plabuopat='',
+    Plabuapat='',
+    Plabuomat='',
+    Plabuamat='',
+    Plconyuge='',
+    Pltots='',
+    Plevent='',
+    Pcognomcj='',
+    Pcognomq='',
+    Pprofeq='',
+    Pnompa='',
+    Pnomma='',
+    Pnomcon='',
+    Ppagina='1',
+    Pprincipio='',
+    Pfinal='nnnn',
+    Psexo='',
+    Pprincipio_evento='',
+    Pfinal_evento='nnnn',
+    Pobserva='',
+    Pfiltre='P',
+    Porden='evento',
+    PSubmit='BUSCAR'
+):
+    
+    url,html=researcher(Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, Ppagina, Pprincipio, Pfinal, Psexo, Pprincipio_evento, Pfinal_evento, Pobserva, Pfiltre, Porden, PSubmit)
+    
+    nPages=getNpages(html)
+    
+    if type(nPages)==int:
+        for i in range(nPages+1):
+            # time.sleep(1)
+            # print(i)
+            try:
+                # url,html=funciones.researcher(Pprincipio_evento=1400, Ppagina=int(i))
+                url,html=researcher(Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, int(i), Pprincipio, Pfinal, Psexo, Pprincipio_evento, Pfinal_evento, Pobserva, Pfiltre, Porden, PSubmit)
+                pa=pd.read_html(html)
+                ruta=create_rute_to_save(nombreCarpeta,nombreSubCarpeta)
+                if (i <1):
+                    print(ruta)
+                # print(i)
+            except: pass
+
+            registro_to_csv(pa,ruta,i)
+
+            # if (i==1):
+            #     break
+            #meterlo en sql o otro lugar q se vea bien rapido
+            #¿pasar a gedcom?
+
+        print('Proceso términado con éxito.')
