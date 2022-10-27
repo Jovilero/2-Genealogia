@@ -3,40 +3,83 @@
 #JJVL
 
 import funciones
-import pandas as pd
-import time
-import os
 
 
 apellido1="Quintanilla"
 apellido2=""
+desde=1400
+hasta=1950
+# funciones.search_getPages_ToCSV(
+#     nombreCarpeta=apellido1,
+#     nombreSubCarpeta='', 
+#     Pa1=apellido1,
+#     Pprincipio=desde
+# )
 
-# 
-url,html=funciones.researcher(Pa1=apellido1, Pa2=apellido2)
-# url,html=funciones.researcher(Pprincipio_evento=1400)
-nPages=funciones.getNpages(html)
-
-if type(nPages)==int:
-    for i in range(nPages+1):
-        # time.sleep(1)
+if desde>100 or desde-hasta>100:
+    # nVeces=desde/10
+    # print(nVeces)
+    i=0
+    hasta=desde+5
+    while desde<hasta:
+        i=i+1
         print(i)
-        try:
-            # url,html=funciones.researcher(Pprincipio_evento=1400, Ppagina=int(i))
-            url,html=funciones.researcher(Pa1=apellido1, Pa2=apellido2, Ppagina=int(i))
-            pa=pd.read_html(html)
-            ruta=funciones.create_rute_to_save(apellido1,apellido2)
-            if (i <1):
-                print(ruta)
-            print(i)
-        except: pass
-
-        funciones.registro_to_csv(pa,ruta,i)
-
-        # if (i==1):
-        #     break
-        #meterlo en sql o otro lugar q se vea bien rapido
-        #¿pasar a gedcom?
-
-    print('Proceso términado con éxito.')
+        
+        funciones.search_getPages_ToCSV(
+        nombreCarpeta=1400,
+        nombreSubCarpeta='', 
+        # Pa1=apellido1,
+        Pprincipio_evento=desde,
+        Pfinal_evento=hasta
+        )
+       
+        hasta=hasta+5
+        desde=desde+6
+        print(fr'{desde}-{hasta}')
+        if hasta>=1550:
+            break
+else:
+    funciones.search_getPages_ToCSV(
+    nombreCarpeta=apellido1,
+    nombreSubCarpeta='', 
+    Pa1=apellido1,
+    Pprincipio=desde
+    )
+# nombreCarpeta=apellido1
+# nombreSubCarpeta=''
+# Pnom=''
+# # Pa1=''
+# Pa2=''
+# Pa2p=''
+# Pa2m=''
+# Pa1ap=''
+# Pa1am=''
+# Plnac=''
+# Plins=''
+# Plpa=''
+# Plma=''
+# Plabuopat=''
+# Plabuapat=''
+# Plabuomat=''
+# Plabuamat=''
+# Plconyuge=''
+# Pltots=''
+# Plevent=''
+# Pcognomcj=''
+# Pcognomq=''
+# Pprofeq=''
+# Pnompa=''
+# Pnomma=''
+# Pnomcon=''
+# Ppagina='1'
+# Pprincipio=''
+# Pfinal='nnnn'
+# Psexo=''
+# Pprincipio_evento=''
+# Pfinal_evento='nnnn'
+# Pobserva=''
+# # Pfiltre='P'
+# # Porden='evento'
+# # PSubmit='BUSCAR'
 
 
