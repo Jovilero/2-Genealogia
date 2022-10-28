@@ -1,4 +1,4 @@
-# Wednesday, October 26, 2022 @ 03:19:57 PM
+# Friday, October 28, 2022 @ 08:39:06 PM
 #author: jjvl
 
 
@@ -84,24 +84,23 @@ def getNpages(html):
 
 
 
-def create_rute_to_save(param1,param2='',path=fr'.\Ejemplos'):
+def create_rute_to_save(param1='',param2='',path=fr'.\Ejemplos'):
     # print("creando ruta")
     if os.path.isdir(path)==False:
         os.mkdir(path)
+
     try:
         os.mkdir(fr'{path}\{param1}')
         ruta=fr'{path}\{param1}'
-        return ruta
     except: 
         ruta=fr'{path}\{param1}'
         
     try:
         os.mkdir(fr'{path}\{param1}\{param2}')
         ruta=fr'{path}\{param1}\{param2}'
-        return ruta
-
-    except:
+    except:       
         ruta=fr'{path}\{param1}\{param2}'
+    
     return ruta
 
 
@@ -113,8 +112,8 @@ def registro_to_csv(pa, ruta,i):
         # print(pa[5].loc[1,1])
     except: anyo="x"
 
-    pa[2].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='w', index=False, header=False)
-    # pa[3].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
+    pa[2].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='w', index=False, header=False) #
+    # pa[3].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False) #tabla1
     pa[4].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
     pa[5].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
     pa[6].to_csv(fr'{ruta}\{i}_{anyo}.csv', mode='a', index=False, header=False)
@@ -159,7 +158,7 @@ def search_getPages_ToCSV(
     Porden='evento',
     PSubmit='BUSCAR'
 ):
-    print("Obteniendo las paginas y guardando el csv en el directorio")
+    # print("Obteniendo las paginas y guardando el csv en el directorio")
     url,html=researcher(Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, Ppagina, Pprincipio, Pfinal, Psexo, Pprincipio_evento, Pfinal_evento, Pobserva, Pfiltre, Porden, PSubmit)
     
     nPages=getNpages(html)
@@ -167,22 +166,103 @@ def search_getPages_ToCSV(
     if type(nPages)==int:
         for i in range(nPages+1):
             # time.sleep(1)
-            print(i)
+            # print(i)
             try:
                 # url,html=funciones.researcher(Pprincipio_evento=1400, Ppagina=int(i))
                 url,html=researcher(Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, int(i), Pprincipio, Pfinal, Psexo, Pprincipio_evento, Pfinal_evento, Pobserva, Pfiltre, Porden, PSubmit)
                 pa=pd.read_html(html)
-                ruta=create_rute_to_save(nombreCarpeta,nombreSubCarpeta)
-                if (i <1):
-                    print(ruta)
-                # print(i)
+                
             except: pass
 
-            registro_to_csv(pa,ruta,i)
+            ruta=create_rute_to_save(nombreCarpeta,nombreSubCarpeta)
+            if (i==0):
+                print(ruta)
+            # registro_to_db()
 
-            # if (i==1):
-            #     break
+            try:
+                registro_to_csv(pa,ruta,i)
+                # print(f"Dataframe {i} almacenado con exito")
+            except: 
+                print(f"DATAFRAME {i} NO ALMACENADO ALERTA COBRA")
+                pass
+            # print(i)
+
             #meterlo en sql o otro lugar q se vea bien rapido
             #¿pasar a gedcom?
 
         print('Proceso términado con éxito.')
+
+
+
+def getCSV5years(
+    nombreCarpeta='', nombreSubCarpeta='',
+    Pnom='',
+    Pa1='', 
+    Pa2='',
+    Pa2p='',
+    Pa2m='',
+    Pa1ap='',
+    Pa1am='',
+    Plnac='',
+    Plins='',
+    Plpa='',
+    Plma='',
+    Plabuopat='',
+    Plabuapat='',
+    Plabuomat='',
+    Plabuamat='',
+    Plconyuge='',
+    Pltots='',
+    Plevent='',
+    Pcognomcj='',
+    Pcognomq='',
+    Pprofeq='',
+    Pnompa='',
+    Pnomma='',
+    Pnomcon='',
+    Ppagina='1',
+    Pprincipio='',
+    Pfinal='nnnn',
+    Psexo='',
+    Pprincipio_evento='',
+    Pfinal_evento='nnnn',
+    Pobserva='',
+    Pfiltre='P',
+    Porden='evento',
+    PSubmit='BUSCAR'
+):
+
+    if Pfinal_evento-Pprincipio_evento>100:
+
+        i=0
+        hasta=Pprincipio_evento+5
+        while Pprincipio_evento<hasta:
+            i=i+1
+            Pprincipio_evento=Pprincipio_evento+1
+            
+            if nombreCarpeta!='' and nombreSubCarpeta=='':
+                search_getPages_ToCSV(nombreCarpeta,nombreSubCarpeta,Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, Ppagina, Pprincipio, Pfinal, Psexo, Pprincipio_evento, hasta, Pobserva, Pfiltre, Porden, PSubmit)
+            
+            if nombreCarpeta!='' and nombreSubCarpeta!='':
+                search_getPages_ToCSV(nombreCarpeta,nombreSubCarpeta,Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, Ppagina, Pprincipio, Pfinal, Psexo, Pprincipio_evento, hasta, Pobserva, Pfiltre, Porden, PSubmit)
+            
+            if nombreCarpeta=='' and nombreSubCarpeta=='':
+                search_getPages_ToCSV(Pa1,str(Pprincipio_evento),Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, Ppagina, Pprincipio, Pfinal, Psexo, Pprincipio_evento, hasta, Pobserva, Pfiltre, Porden, PSubmit)
+
+            Pprincipio_evento=Pprincipio_evento-1
+            hasta=hasta+5
+            Pprincipio_evento=Pprincipio_evento+5
+            print(fr'{Pprincipio_evento}-{hasta}')
+            if hasta>=Pfinal_evento:
+                break
+    else:
+        search_getPages_ToCSV(Pa1,Pprincipio_evento,Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, Ppagina, Pprincipio, Pfinal, Psexo, Pprincipio_evento, Pfinal_evento, Pobserva, Pfiltre, Porden, PSubmit)
+# (
+#         nombreCarpeta=apellido1,
+#         nombreSubCarpeta='', 
+#         Pa1=apellido1,
+#         Pprincipio=Pprincipio_evento
+#         )
+
+def registro_to_db():
+    pass

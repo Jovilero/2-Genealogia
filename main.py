@@ -1,5 +1,5 @@
-# Wednesday, October 26, 2022 @ 03:20:25 PM
-#ctrl+shift+t
+# Friday, October 28, 2022 @ 08:38:56 PM
+# #ctrl+shift+t
 #JJVL
 
 import funciones
@@ -7,44 +7,19 @@ import funciones
 
 apellido1="Carratala"
 apellido2=""
-desde=1500
-hasta=1950
-# funciones.search_getPages_ToCSV(
-#     nombreCarpeta=apellido1,
-#     nombreSubCarpeta='', 
-#     Pa1=apellido1,
-#     Pprincipio=desde
-# )
+desde=1540
+fin=1650
 
-if hasta-desde>100:
-    # nVeces=desde/10
-    # print(nVeces)
-    i=0
-    hasta=desde+5
-    while desde<hasta:
-        i=i+1
-        print("mamahuevo")
-        desde=desde+1
-        funciones.search_getPages_ToCSV(
-        nombreCarpeta=1400,
-        nombreSubCarpeta='', 
-        # Pa1=apellido1,
-        Pprincipio_evento=desde,
-        Pfinal_evento=hasta
-        )
-        desde=desde-1
-        hasta=hasta+5
-        desde=desde+5
-        print(fr'{desde}-{hasta}')
-        if hasta>=1550:
-            break
-else:
-    funciones.search_getPages_ToCSV(
-    nombreCarpeta=apellido1,
-    nombreSubCarpeta='', 
+funciones.getCSV5years(
+    # nombreCarpeta=apellido1,
+    # nombreSubCarpeta=desde, 
     Pa1=apellido1,
-    Pprincipio=desde
+    Pprincipio_evento=desde,
+    Pfinal_evento=fin
     )
+ 
+
+
 # nombreCarpeta=apellido1
 # nombreSubCarpeta=''
 # Pnom=''
