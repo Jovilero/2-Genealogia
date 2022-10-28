@@ -5,9 +5,9 @@
 import funciones
 
 
-apellido1="Quintanilla"
+apellido1="Carratala"
 apellido2=""
-desde=1400
+desde=1500
 hasta=1950
 # funciones.search_getPages_ToCSV(
 #     nombreCarpeta=apellido1,
@@ -16,15 +16,15 @@ hasta=1950
 #     Pprincipio=desde
 # )
 
-if desde>100 or desde-hasta>100:
+if hasta-desde>100:
     # nVeces=desde/10
     # print(nVeces)
     i=0
     hasta=desde+5
     while desde<hasta:
         i=i+1
-        print(i)
-        
+        print("mamahuevo")
+        desde=desde+1
         funciones.search_getPages_ToCSV(
         nombreCarpeta=1400,
         nombreSubCarpeta='', 
@@ -32,9 +32,9 @@ if desde>100 or desde-hasta>100:
         Pprincipio_evento=desde,
         Pfinal_evento=hasta
         )
-       
+        desde=desde-1
         hasta=hasta+5
-        desde=desde+6
+        desde=desde+5
         print(fr'{desde}-{hasta}')
         if hasta>=1550:
             break

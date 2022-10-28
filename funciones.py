@@ -49,7 +49,7 @@ def researcher(
     PSubmit='BUSCAR'
     ):
 
-
+    # print("Construyendo consulta")
     URL="https://www.arxparrvalencia.org/listados.php?"
 
     end_url=f"nom={Pnom}&a1={Pa1}&a2={Pa2}&a2p={Pa2p}&a2m={Pa2m}&a1ap={Pa1ap}&a1am={Pa1am}&lnac={Plnac}&lins={Plins}&lpa={Plpa}&lma={Plma}&labuopat={Plabuopat}&labuapat={Plabuapat}&labuomat={Plabuomat}&labuamat={Plabuamat}&lconyuge={Plconyuge}&ltots={Pltots}&levent={Plevent}&cognomcj={Pcognomcj}&cognomq={Pcognomq}&profeq={Pprofeq}&nompa={Pnompa}&nomma={Pnomma}&nomcon={Pnomcon}&pagina={Ppagina}&principio={Pprincipio}&final={Pfinal}&sexo={Psexo}&principio_evento={Pprincipio_evento}&final_evento={Pfinal_evento}&observa={Pobserva}&filtre={Pfiltre}&orden={Porden}&Submit={PSubmit}"
@@ -65,6 +65,7 @@ def researcher(
     
     
 def getNpages(html):
+    # print("obteniendo paginas")
     pa=pd.read_html(html)
 
     for eachlist in pa[1].head().to_string().splitlines():
@@ -78,13 +79,14 @@ def getNpages(html):
             # print(nPages)
             return int(nPages.replace('.',""))
         except:
-            print("No ha sido posible obtener el número de páginas.")
+            # print("No ha sido posible obtener el número de páginas.")
             pass
 
 
 
 def create_rute_to_save(param1,param2='',path=fr'.\Ejemplos'):
-    if os.path.isdir==False:
+    # print("creando ruta")
+    if os.path.isdir(path)==False:
         os.mkdir(path)
     try:
         os.mkdir(fr'{path}\{param1}')
@@ -105,6 +107,7 @@ def create_rute_to_save(param1,param2='',path=fr'.\Ejemplos'):
 
 
 def registro_to_csv(pa, ruta,i):
+    # print("guardando csv en la ruta")
     try:
         anyo=pa[5].loc[1,1][-4:]
         # print(pa[5].loc[1,1])
@@ -156,7 +159,7 @@ def search_getPages_ToCSV(
     Porden='evento',
     PSubmit='BUSCAR'
 ):
-    
+    print("Obteniendo las paginas y guardando el csv en el directorio")
     url,html=researcher(Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, Ppagina, Pprincipio, Pfinal, Psexo, Pprincipio_evento, Pfinal_evento, Pobserva, Pfiltre, Porden, PSubmit)
     
     nPages=getNpages(html)
@@ -164,7 +167,7 @@ def search_getPages_ToCSV(
     if type(nPages)==int:
         for i in range(nPages+1):
             # time.sleep(1)
-            # print(i)
+            print(i)
             try:
                 # url,html=funciones.researcher(Pprincipio_evento=1400, Ppagina=int(i))
                 url,html=researcher(Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, int(i), Pprincipio, Pfinal, Psexo, Pprincipio_evento, Pfinal_evento, Pobserva, Pfiltre, Porden, PSubmit)
