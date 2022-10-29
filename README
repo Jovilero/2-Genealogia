@@ -35,9 +35,9 @@ Los parametros de busqueda estan definidos en la función researcher, y son los 
     Pprincipio_evento=''  - Año del evento inicio del rango de  busqueda
     Pfinal_evento='nnnn'  - Año del evento final del rango de busqueda
     Pobserva=''           - Observación que conste en el registro
-    Pfiltre='P'           - 3 Opciones de filtrado para las cadenas de texto: Coincide principio, Coincide final, contiene 
-    Porden='evento'       - Orden de respuesta del resultado: 4º Opciones - Por apellido, por año de evento [P], año de nacimiento o por lugar de inscripcion
+    Pfiltre=['P','F','C'] - 3 Opciones de filtrado para las cadenas de texto: Coincide principio, Coincide final, contiene 
+    Porden='evento'       - Orden de respuesta del resultado: 4º Opciones - Por apellido, por año de evento, año de nacimiento o por lugar de inscripcion
     PSubmit='BUSCAR'      - Parametro por defecto
     
     
-   
+Para buscar registros sin fechas Pfinal = '' y/o Pfinal_evento=''
