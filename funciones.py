@@ -1,4 +1,4 @@
-# Sunday, October 30, 2022 @ 01:20:09 AM
+# Monday, October 31, 2022 @ 01:00:37 AM
 # #author: jjvl
 
 import requests
@@ -287,6 +287,27 @@ def getCSV5years(
 
 
 
+def walkpath(ext):
+    """This function looks for existin files that match the indicated extension as argument and returns a dictionary with pandas dataframes
+    Args:
+        ext (extension of a file): it may be the extension of a file, and the file must be stored in a folder down the .py that calls this function
+    Returns:
+        a dictionary containing pandas dataframe of the information contained in the filed that matched the extension indicated as argument
+        also returns a list with the keys for the dictionary 
+    """
+    dic={}
+    keys=[]
+    for this_tuple in os.walk(os.path.abspath(os.curdir)):
+        for each_dir in this_tuple:
+            if type(each_dir)==list:
+                for each_file in each_dir:
+                    if each_file.endswith(f'.{ext}') or each_file.endswith(f'{ext}')  :
+                        print(fr'{this_tuple[0]}\{each_file}')
+                        pa=pd.read_fwf(fr'{this_tuple[0]}\{each_file}',index=False, header=None)
+                        dic[each_file]=pa
+                        keys.append(each_file)
+
+    return dic, keys
 
 def registro_to_db():
     CONN= connector.pgConnect()
