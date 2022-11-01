@@ -1,14 +1,14 @@
-# Sunday, October 30, 2022 @ 01:19:41 AM
+# Wednesday, November 2, 2022 @ 12:38:52 AM
 # #ctrl+shift+t
 #JJVL
 
 import funciones
 
 
-apellido1="Pinilla"
-apellido2="Folgado"
-desde=''
-fin=''
+apellido1="Guitarte"
+apellido2=""
+# desde=''
+# fin=''
 #%% función para sacar por apellido
 funciones.search_getPages_ToCSV(Pcognomq=apellido1,nombreCarpeta=apellido1)
 

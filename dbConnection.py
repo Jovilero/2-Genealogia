@@ -17,7 +17,7 @@ def pgConnect():
                           password = Settings.PASSWORD, 
                           host = Settings.HOST,
                           port =Settings.PORT)
-    # print("Connected")
+    print("Connected")
     return conn
 
 # Función para desconectar con la database 
@@ -25,4 +25,4 @@ def pgDisconnect(conn):
     cursor = conn.cursor()
     cursor.close()
     conn.close()
-    # print("Disconnected")
+    print("Disconnected")
