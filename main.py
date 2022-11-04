@@ -1,32 +1,33 @@
-# Wednesday, November 2, 2022 @ 12:38:52 AM
+# Friday, November 4, 2022 @ 08:36:11 PM
 # #ctrl+shift+t
 #JJVL
 
 import funciones
 
 
-apellido1="Lanzuela"
-apellido2=""
-# desde=''
-# fin='' 
+# apellido1="Lanzuela"
+# apellido2=""
+desde=''
+fin='' 
 #%% función para sacar por apellido
-funciones.search_getPages_ToCSV(Pcognomq=apellido1,nombreCarpeta=apellido1)
+# funciones.search_getPages_ToCSV(Pcognomq=apellido1,nombreCarpeta=apellido1)
 
 #%%función para sacar por apellido cada 5 años
-# funciones.getCSV5years(
-#     nombreCarpeta=apellido1,
-#     # nombreSubCarpeta=desde, 
-#     Pa1=apellido1,
-#     Pa2=apellido2,
-#     # Pcognomq=apellido1,
-#     Pprincipio_evento=desde,
-#     Pfinal_evento=fin
-#     )
+funciones.getSQL5years(
+    # nombreCarpeta=apellido1,
+    # nombreSubCarpeta=desde, 
+    # Pa1=apellido1,
+    # Pa2=apellido2,
+    # Pcognomq=apellido1,
+    Pprincipio_evento=desde,
+    Pfinal_evento=fin
+    )
 
             
 #%% a section in betwen
 
-# funciones.getEveryRecordWODate(1)
+funciones.getEveryRecordWODate_sql(1)
+
 # url,html=funciones.researcher(Pcognomq=apellido1,Pfinal='',Pfinal_evento='')
 # print(url)
 # nPages=funciones.getNpages(html)
