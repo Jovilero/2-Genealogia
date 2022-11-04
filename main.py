@@ -5,10 +5,10 @@
 import funciones
 
 
-apellido1="Guitarte"
+apellido1="Lanzuela"
 apellido2=""
 # desde=''
-# fin=''
+# fin='' 
 #%% función para sacar por apellido
 funciones.search_getPages_ToCSV(Pcognomq=apellido1,nombreCarpeta=apellido1)
 
@@ -41,7 +41,7 @@ funciones.search_getPages_ToCSV(Pcognomq=apellido1,nombreCarpeta=apellido1)
 # Pa2p=''
 # Pa2m=''
 # Pa1ap=''
-# Pa1am=''
+# Pa1am=''e
 # Plnac=''
 # Plins=''
 # Plpa=''
