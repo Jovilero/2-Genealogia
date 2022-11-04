@@ -271,7 +271,7 @@ def search_getPages_ToSQL(
 
 
 
-def getEveryRecordWODate(value):
+def getEveryRecordWODate_csv(value):
     """This function return a bunch of CSVs of registers with unknown dates.
        There are 4 cases explained below:
        value == 1, it will generate a CSV for each register with unknown birth date and unknown event dates
@@ -289,14 +289,18 @@ def getEveryRecordWODate(value):
         match value:
             case 1:
                 search_getPages_ToCSV(Pnom=each,Pfinal='',Pfinal_evento='',nombreCarpeta=f'{each}_sinFechasConocidas')
+                search_getPages_ToSQL(Pnom=each,Pfinal='',Pfinal_evento='',nombreCarpeta=f'{each}_sinFechasConocidas')
             case 2: 
                 search_getPages_ToCSV(Pnom=each,Pfinal='',nombreCarpeta=f'{each}_sinFNacimiento')
+                search_getPages_ToSQL(Pnom=each,Pfinal='',nombreCarpeta=f'{each}_sinFNacimiento')
             case 3:
                 search_getPages_ToCSV(Pnom=each,Pfinal_evento='',nombreCarpeta=f'{each}_sinFEvento')
+                search_getPages_ToSQL(Pnom=each,Pfinal_evento='',nombreCarpeta=f'{each}_sinFEvento')
             case 4:
                 search_getPages_ToCSV(Pnom=each,Pfinal='',Pfinal_evento='',nombreCarpeta=f'{each}_sinFechasConocidas')
                 search_getPages_ToCSV(Pnom=each,Pfinal='',nombreCarpeta=f'{each}_sinFNacimiento')
                 search_getPages_ToCSV(Pnom=each,Pfinal_evento='',nombreCarpeta=f'{each}_sinFEvento')
+                search_getPages_ToSQL
 
 def getCSV5years(
     nombreCarpeta='', nombreSubCarpeta='',
@@ -437,15 +441,10 @@ def dataframe_to_sql(pa):
             CONN= connector.pgConnect()
             cursor=CONN.cursor()
             sql = fr"""insert into ab."Personas" (registro, relacion, nombre, apellido1, apellido2, LugarNacimiento) values ({pa[2].loc[1,1]}, '{pa[4].loc[i,0]}','{pa[4].loc[i,1]}','{pa[4].loc[i,2]}','{pa[4].loc[i,3]}','{pa[4].loc[i,4]}')"""
-            
-            
-            # try:
-                
+
             cursor.execute(sql)
             CONN.commit()
-        # connector.pgDisconnect(CONN)
-            # except: 
-            #     print(sql)
+
             connector.pgDisconnect(CONN)
     
 
@@ -459,3 +458,156 @@ def dataframe_to_sql(pa):
         CONN.commit()
     except: pass
     connector.pgDisconnect(CONN)
+
+
+def search_getPages_ToSQL(  
+    Pnom='',
+    Pa1='', 
+    Pa2='',
+    Pa2p='',
+    Pa2m='',
+    Pa1ap='',
+    Pa1am='',
+    Plnac='',
+    Plins='',
+    Plpa='',
+    Plma='',
+    Plabuopat='',
+    Plabuapat='',
+    Plabuomat='',
+    Plabuamat='',
+    Plconyuge='',
+    Pltots='',
+    Plevent='',
+    Pcognomcj='',
+    Pcognomq='',
+    Pprofeq='',
+    Pnompa='',
+    Pnomma='',
+    Pnomcon='',
+    Ppagina='1',
+    Pprincipio='',
+    Pfinal='nnnn',
+    Psexo='',
+    Pprincipio_evento='',
+    Pfinal_evento='nnnn',
+    Pobserva='',
+    Pfiltre='P',
+    Porden='evento',
+    PSubmit='BUSCAR'
+):
+    # print("Obteniendo las paginas y guardando el csv en el directorio")
+    url,html=researcher(Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, Ppagina, Pprincipio, Pfinal, Psexo, Pprincipio_evento, Pfinal_evento, Pobserva, Pfiltre, Porden, PSubmit)
+    
+    nPages=getNpages(html)
+    
+    if type(nPages)==int:
+        
+        for i in range(nPages+1):
+            # time.sleep(1)
+            # print(i)
+            try:
+                # url,html=funciones.researcher(Pprincipio_evento=1400, Ppagina=int(i))
+                url,html=researcher(Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, int(i), Pprincipio, Pfinal, Psexo, Pprincipio_evento, Pfinal_evento, Pobserva, Pfiltre, Porden, PSubmit)
+                
+                pa=pd.read_html(html)
+                
+            except: pass
+
+            if i>0:
+                dataframe_to_sql(pa)
+               
+        print('Proceso términado con éxito.')
+
+
+
+    
+def getEveryRecordWODate_sql(value):
+    """This function return a bunch of CSVs of registers with unknown dates.
+       There are 4 cases explained below:
+       value == 1, it will insert into a database for each register with unknown birth date and unknown event dates
+       value == 2, it will insert into a database for each register with unknown birth date
+       value == 3, it will insert into a database for each register with unknown event date
+       value == 4, will do the other 3 options in the same execution
+       
+    Args:
+        value (_integer_): an integer betwen 1 and 4
+    """
+    import string
+    lista=list(string.ascii_uppercase)
+    
+    for each in lista:
+        match value:
+            case 1:
+                search_getPages_ToSQL(Pnom=each,Pfinal='',Pfinal_evento='')
+            case 2: 
+                
+                search_getPages_ToSQL(Pnom=each,Pfinal='')
+            case 3:
+                
+                search_getPages_ToSQL(Pnom=each,Pfinal_evento='')
+            case 4:
+                search_getPages_ToSQL(Pnom=each,Pfinal='',Pfinal_evento='')
+                search_getPages_ToSQL(Pnom=each,Pfinal='')
+                search_getPages_ToSQL(Pnom=each,Pfinal_evento='')
+
+
+
+def getSQL5years(
+    
+    Pnom='',
+    Pa1='', 
+    Pa2='',
+    Pa2p='',
+    Pa2m='',
+    Pa1ap='',
+    Pa1am='',
+    Plnac='',
+    Plins='',
+    Plpa='',
+    Plma='',
+    Plabuopat='',
+    Plabuapat='',
+    Plabuomat='',
+    Plabuamat='',
+    Plconyuge='',
+    Pltots='',
+    Plevent='',
+    Pcognomcj='',
+    Pcognomq='',
+    Pprofeq='',
+    Pnompa='',
+    Pnomma='',
+    Pnomcon='',
+    Ppagina='1',
+    Pprincipio='',
+    Pfinal='nnnn',
+    Psexo='',
+    Pprincipio_evento='',
+    Pfinal_evento='nnnn',
+    Pobserva='',
+    Pfiltre='P',
+    Porden='evento',
+    PSubmit='BUSCAR'
+):
+
+    if Pfinal_evento-Pprincipio_evento>100:
+
+        i=0
+        hasta=Pprincipio_evento+5
+        while Pprincipio_evento<hasta:
+            i=i+1
+            Pprincipio_evento=Pprincipio_evento+1
+            # try:
+            search_getPages_ToSQL(Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, Ppagina, Pprincipio, Pfinal, Psexo, Pprincipio_evento, hasta, Pobserva, Pfiltre, Porden, PSubmit)
+            # except:
+            #     print("algo chungo ha pasao")
+            #     pass
+            Pprincipio_evento=Pprincipio_evento-1
+            hasta=hasta+5
+            Pprincipio_evento=Pprincipio_evento+5
+            print(fr'{Pprincipio_evento}-{hasta}')
+            if hasta>=Pfinal_evento:
+                break
+    else:
+        search_getPages_ToSQL(Pnom, Pa1, Pa2, Pa2p, Pa2m, Pa1ap, Pa1am, Plnac, Plins, Plpa, Plma, Plabuopat, Plabuapat, Plabuomat, Plabuamat, Plconyuge, Pltots, Plevent, Pcognomcj, Pcognomq, Pprofeq, Pnompa, Pnomma, Pnomcon, Ppagina, Pprincipio, Pfinal, Psexo, Pprincipio_evento, Pfinal_evento, Pobserva, Pfiltre, Porden, PSubmit)
